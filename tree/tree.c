@@ -45,38 +45,38 @@ void PreOrderTraversal(BinTree BT) {
  * print: 4 2 1 3 6 5 7
  */
 void IterPreOrderTraversal(BinTree BT) {
-    
+
 }
 
 
 
 
-/** InOrder, using recursion 
+/** InOrder, using recursion
  * print: 1 2 3 4 5 6 7
  */
 
 
 
-/** 
- * InOrder, using iteration 
+/**
+ * InOrder, using iteration
  * print: 1 2 3 4 5 6 7
  */
 
 
-/** 
- * PosOrder, using recursion 
+/**
+ * PosOrder, using recursion
  * print: 1 3 2 5 7 6 4
  */
 
 
-/** 
- * PosOrder, using iteration 
+/**
+ * PosOrder, using iteration
  * print: 1 3 2 5 7 6 4
  */
 
 
-/** 
- * Find, using recursion 
+/**
+ * Find, using recursion
  */
 BinTree Find(ElementType x, BinTree BST) {
     if (!BST)
@@ -89,8 +89,8 @@ BinTree Find(ElementType x, BinTree BST) {
         return BST;
 }
 
-/** 
- * Find, using iteration 
+/**
+ * Find, using iteration
  */
 BinTree IterFind(ElementType x, BinTree BST) {
     while (BST) {
