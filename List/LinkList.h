@@ -1,5 +1,5 @@
-#ifndef CODEFORTEST_STACK_H
-#define CODEFORTEST_STACK_H
+#ifndef CODEFORTEST_LINKLIST_H
+#define CODEFORTEST_LINKLIST_H
 
 typedef int DataType;
 
@@ -37,7 +37,7 @@ void InsertList(LinkList head, int i, DataType x) {
     p->next = node;
 }
 
-#endif //CODEFORTEST_STACK_H
+#endif //CODEFORTEST_LINKLIST_H
 
 
 
