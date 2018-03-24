@@ -2,8 +2,9 @@
 #include <stdio.h>
 
 
-typedef struct TreeNode *BinTree;
+
 typedef int ElementType;
+typedef struct TreeNode *BinTree;
 typedef struct TreeNode TreeNode;
 
 struct TreeNode {
@@ -11,6 +12,10 @@ struct TreeNode {
     BinTree Left;
     BinTree Right;
 };
+
+#include "ArrayStack.h"
+
+
 
 /**
  * Create Tree
@@ -39,28 +44,43 @@ void PreOrderTraversal(BinTree BT) {
         PreOrderTraversal(BT->Right);
     }
 }
-
 /**
  * PreOrder, using iteration
  * print: 4 2 1 3 6 5 7
  */
-void IterPreOrderTraversal(BinTree BT) {
-
-}
-
 
 
 
 /** InOrder, using recursion
  * print: 1 2 3 4 5 6 7
  */
-
-
-
+void InOrderTraversal(BinTree BT) {
+    if(BT) {
+        InOrderTraversal(BT->Left);
+        printf("%d ", BT->Data);
+        InOrderTraversal(BT->Right);
+    }
+}
 /**
  * InOrder, using iteration
  * print: 1 2 3 4 5 6 7
  */
+void IterInOrderTraversal(BinTree BT) {
+    BinTree T = BT;
+    Stack *S = CreateStack();
+    while (T || !IsEmpty(S)) {
+        while (T) {
+            Push(S, T);
+            T = T->Left;
+        }
+        if (!IsEmpty(S)) {
+            T = Pop(S);
+            printf("%d ", T->Data);
+            T = T->Right;
+        }
+    }
+}
+
 
 
 /**
@@ -68,11 +88,19 @@ void IterPreOrderTraversal(BinTree BT) {
  * print: 1 3 2 5 7 6 4
  */
 
+void PosOrderTraversal(BinTree BT) {
+    if(BT) {
+        PosOrderTraversal(BT->Left);
+        PreOrderTraversal(BT->Right);
+        printf("%d", BT->Data);
+    }
+}
 
 /**
  * PosOrder, using iteration
  * print: 1 3 2 5 7 6 4
  */
+
 
 
 /**
@@ -105,7 +133,11 @@ BinTree IterFind(ElementType x, BinTree BST) {
 }
 
 
+
+
 int main() {
+
+
     BinTree T = (BinTree) malloc(sizeof(TreeNode));
     T->Data = 4;
     createTree(T, 2, 6);
@@ -114,8 +146,11 @@ int main() {
 
     //PreOrderTraversal(T);
     //PosOrderGetHeight(T);
-    BinTree position = Find(3, T);
-    printf("%d ", position->Data);
+    //BinTree position = Find(3, T);
+    //printf("%d ", position->Data);
+
+    //InOrderTraversal(T);
+    IterInOrderTraversal(T);
 
     return 0;
 }
