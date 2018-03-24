@@ -1,5 +1,5 @@
-#ifndef CODEFORTEST_STACK_H
-#define CODEFORTEST_STACK_H
+#ifndef CODEFORTEST_ARRAYLIST_H
+#define CODEFORTEST_ARRAYLIST_H
 
 #define ListSize 100
 typedef int DataType;
@@ -79,5 +79,5 @@ int Max(SeqList *L) {
     return position;
 }
 
-#endif //CODEFORTEST_STACK_H
+#endif //CODEFORTEST_ARRAYLIST_H
 
